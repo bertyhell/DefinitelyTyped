@@ -273,7 +273,7 @@ declare module L {
           * Sets a map view that contains the given geographical bounds with the maximum
           * zoom level possible.
           */
-        fitBounds(bounds: LatLngBounds): Map;
+        fitBounds(bounds: LatLngBounds, options?: fitBoundsOptions): Map;
 
         /**
           * Sets a map view that mostly contains the whole world with the maximum zoom
@@ -1715,6 +1715,27 @@ declare module L {
           */
         isValid(): boolean;
 
+    }
+    
+    
+    export interface fitBoundsOptions {
+        /**
+          * Sets the amount of padding in the top left corner of a map container that 
+          * shouldn't be accounted for when setting the view to fit bounds. 
+          * Useful if you have some control overlays on the map like a sidebar and 
+          * you don't want them to obscure objects you're zooming to.
+          */
+        paddingTopLeft?: Point;
+
+        /**
+          * The same for bottom right corner of the map.
+          */
+        paddingBottomRight?: Point;
+        
+        /**
+          * Equivalent of setting both top left and bottom right padding to the same value.
+          */
+        padding?: Point;
     }
 
     export class Point {
