@@ -63,7 +63,7 @@ interface JScrollPaneSettings {
 	 * width of it's content. However, in some cases you will want to disable this (e.g. to prevent horizontal scrolling or
 	 * where the calculation of the size of the content doesn't return reliable results)
 	*/
-	contentWidth?: number;
+	contentWidth?: string;
 	/**
 	 * Whether to use animation when calling scrollTo or scrollBy. You can control the animation speed and easing by using
 	 * the animateDuration and animateEase settings or if you want to exercise more complete control then you can override
